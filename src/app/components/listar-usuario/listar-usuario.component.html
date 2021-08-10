@@ -1,0 +1,36 @@
+<div class="card mt-5">
+    <div class="row card-header">
+        <div class="col-auto">
+            <h3>Lista de Usuarios</h3>
+        </div>
+        <div class="col-auto">
+            <a class="btn btn-success" routerLink="/agregar-usuario">Agregar usuario</a>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-responsive">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- obtener los datos de los empleados y mostrarlos dinamicamente y el icontrol es para tener el control de la info -->
+                <tr *ngFor="let usuario of Usuarios; let iControl=index">
+                    <td> {{ usuario.id }} </td>
+                    <td> {{ usuario.nombre }} </td>
+                    <td> {{ usuario.correo }} </td>
+                    <td>Activo | No Activo</td>
+                    <td>
+                        <a class="btn btn-primary" routerLink="/editar-usuario/{{ usuario.id }}">Editar</a>
+                        <a class="btn btn-danger mx-2" (click)="borrarRegistro(usuario.id,iControl)" role="button">Borrar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

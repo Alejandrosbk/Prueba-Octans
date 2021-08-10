@@ -1,0 +1,21 @@
+<div class="card mt-5">
+    <div class="card-header">
+        <h3>Agregar Usuarios</h3>
+    </div>
+    <div class="card-body">
+        <form ngNativeValidate [formGroup]="formularioUsuarios" (ngSubmit)="enviarDatos()">
+            <div class="mb-3">
+                <label for="" class="form-label">Nombre:</label>
+                <input required type="text" class="form-control" name="" formControlName="nombre" id="" aria-describedby="helpId" placeholder="Escribe un Nombre...">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Correo:</label>
+                <input required type="email" class="form-control" name="" formControlName="correo" id="" aria-describedby="helpId" placeholder="Escribe un correo...">
+            </div>
+            <div class="btn-group" role="group" aria-label="">
+                <button type="submit" class="btn btn-success">Agregar</button>
+                <button type="button" routerLink="/listar-usuario" class="btn btn-primary mx-2">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
